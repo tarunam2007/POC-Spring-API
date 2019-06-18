@@ -10,32 +10,22 @@ node('master') {
 
      
     stage('Build') {
-             git url: 'https://github.com/VishnuKoti/blog-002.git'
+             git url: 'https://github.com/VishnuKoti/POC-Spring-API.git'
               dir('app') {
 	        def mvnHome = tool 'M3'
  	 	sh "${mvnHome}/bin/mvn clean package"
-                dockerCmd 'build --tag automate/sparktodo:SNAPSHOT1.0 .'
+                dockerCmd 'build --tag upmt/spring:SNAPSHOT1.0 .'
             }
     }
  
     stage('Deploy') {
         stage('Deploy') {
             dir('app') {
-                dockerCmd 'run -d -p 9999:9999 --name "snapshot" automate/sparktodo:SNAPSHOT1.0'
+                dockerCmd 'run -d -p 4000:4000 --name "snapshot" upmt/spring:SNAPSHOT1.0'
             }
         }
     }
-
-    stage('Tests') {
-           try {
-            dir('tests/rest-assured') {
-             sh './gradlew clean test'
-            }
-           } finally {
-            junit testResults: 'tests/rest-assured/build/*.xml', allowEmptyResults: true
-            archiveArtifacts 'tests/rest-assured/build/**'
-           }  
-      }   
+    
   }
 }
 
