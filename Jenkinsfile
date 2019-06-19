@@ -21,7 +21,7 @@ node('master') {
     stage('Deploy') {
         stage('Deploy') {
             dir('src') {
-                dockerCmd 'run -d -p 4000:4000 --name "snapshot" upmt/spring:SNAPSHOT1.0'
+                dockerCmd 'run -d -p 4000:4000 --name "upmt" upmt/spring:SNAPSHOT1.0'
             }
         }
     }
