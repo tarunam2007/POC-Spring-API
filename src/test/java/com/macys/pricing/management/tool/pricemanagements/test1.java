@@ -1,9 +1,7 @@
-package com.macys.pricing.management.tool.pricemanagements;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.boot.*;
+import org.springframework.boot.autoconfigure.*;
+import org.springframework.web.bind.annotation.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
