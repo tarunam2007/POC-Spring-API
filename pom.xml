@@ -82,7 +82,7 @@
 	                        <archive>
 	                            <manifest>
 	                                <addClasspath>true</addClasspath>
-	                                <mainClass>test1</mainClass>
+	                                <mainClass>${project.main.class}</mainClass>
 	                                <classpathPrefix>dependency-jars/</classpathPrefix>
 	                            </manifest>
 	                        </archive>
