@@ -78,7 +78,7 @@
 	                <manifest>
 	                  <addClasspath>true</addClasspath>
 	                  <classpathPrefix>lib/</classpathPrefix>
-	                    <mainClass>com.macys.pricing.management.tool.pricemanagements.PricemanagementsApplication</mainClass>
+	                   <mainClass>com.macys.pricing.management.tool.pricemanagements.PricemanagementsApplication</mainClass>
 	                </manifest>
 	              </archive>
 	            </configuration>

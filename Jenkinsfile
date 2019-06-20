@@ -17,8 +17,8 @@ node('master') {
              git url: 'https://github.com/VishnuKoti/POC-Spring-API.git'
               dir('src') {
 	        def mvnHome = tool 'M3'
-	 
- 	 	sh "${mvnHome}/bin/mvn package && java -jar pricemanagements-0.0.2-SNAPSHOT.jar"
+	
+ 	 	sh "${mvnHome}/bin/mvn -DskipTests clean package"
 		 dockerCmd 'build --tag upmt/spring:SNAPSHOT1.0 .'
             }
     }
