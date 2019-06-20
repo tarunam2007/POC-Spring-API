@@ -17,72 +17,11 @@
         <relativePath/>
     </parent>
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+    </properties>
 
-     <build>
-        <defaultGoal>install</defaultGoal>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-             <plugin>
-	                    <groupId>org.apache.maven.plugins</groupId>
-	                    <artifactId>maven-compiler-plugin</artifactId>
-	                    <configuration>
-	                        <source>1.8</source>
-	                        <target>1.8</target>
-	                    </configuration>
-            </plugin>
-            <plugin>
-	                    <groupId>org.apache.maven.plugins</groupId>
-	                    <artifactId>maven-jar-plugin</artifactId>
-	                    <version>2.4</version>
-	                    <configuration>
-	                        <finalName>umpt</finalName>
-	                        <archive>
-	                            <manifest>
-	                                <addClasspath>true</addClasspath>
-	                                <mainClass>test1</mainClass>
-	                                <classpathPrefix>dependency-jars/</classpathPrefix>
-	                            </manifest>
-	                        </archive>
-	                    </configuration>
-            </plugin>
-            <plugin>
-	                    <groupId>org.apache.maven.plugins</groupId>
-	                    <artifactId>maven-assembly-plugin</artifactId>
-	                    <version>3.1.0</version>
-	                    <executions>
-	                        <execution>
-	                            <goals>
-	                                <goal>single</goal>
-	                            </goals>
-	                            <phase>package</phase>
-	                            <configuration>
-	                                <finalName>upmt</finalName>
-	                                <descriptorRefs>
-	                                    <descriptorRef>jar-with-dependencies</descriptorRef>
-	                                </descriptorRefs>
-	                                <archive>
-	                                    <manifest>
-	                                        <mainClass>test1</mainClass>
-	                                    </manifest>
-	                                </archive>
-	                            </configuration>
-	                        </execution>
-	                    </executions>
-	                </plugin>
-	                <plugin>
-	                    <groupId>org.apache.maven.plugins</groupId>
-	                    <artifactId>maven-release-plugin</artifactId>
-	                    <version>2.5.3</version>
-	                    <configuration>
-	                        <goals>package</goals>
-	                    </configuration>
-            </plugin>
-        </plugins>
-    </build>
-    
     <dependencies>
 	   <dependency>
                 <groupId>log4j</groupId>
@@ -126,6 +65,14 @@
 	    </dependency>
     </dependencies>
 
-    
+    <build>
+        <defaultGoal>install</defaultGoal>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
