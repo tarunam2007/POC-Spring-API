@@ -14,7 +14,7 @@ node('master') {
               dir('src') {
 	        def mvnHome = tool 'M3'
 	 
- 	 	sh "${mvnHome}/bin/mvn package && java -jar ./target/umpt.jar"
+ 	 	sh "${mvnHome}/bin/mvn package && java -jar ../target/pricemanagements-0.0.2-SNAPSHOT.jar"
 		 dockerCmd 'build --tag upmt/spring:SNAPSHOT1.0 .'
             }
     }
