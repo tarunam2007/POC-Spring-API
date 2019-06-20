@@ -10,7 +10,6 @@
     <name>Spring Boot Web Application</name>
     <description>Spring Boot Web Application</description>
 
-    
 
     <dependencies>
 	   <dependency>
