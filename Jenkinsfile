@@ -7,10 +7,6 @@ node('master') {
   withEnv(["DOCKER=${dockerTool}/bin"]) {
   
    
-   stage('Cleanup'){
-    	dockerCmd 'stop upmt'
-    	dockerCmd 'rm upmt'
-    }
 
      
     stage('Build') {
