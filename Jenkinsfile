@@ -7,6 +7,10 @@ node('master') {
   withEnv(["DOCKER=${dockerTool}/bin"]) {
   
    
+   stage('Cleanup'){
+    	dockerCmd 'stop upmt'
+    	dockerCmd 'rm upmt'
+    }
 
      
     stage('Build') {
@@ -14,7 +18,7 @@ node('master') {
               dir('src') {
 	        def mvnHome = tool 'M3'
 	
- 	 	sh "${mvnHome}/bin/mvn -DskipTests clean package"
+ 	 	sh "${mvnHome}/bin/mvn package && java -jar pricemanagements-0.0.2-SNAPSHOT.jar"
 		 dockerCmd 'build --tag upmt/spring:SNAPSHOT1.0 .'
             }
     }
