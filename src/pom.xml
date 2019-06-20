@@ -80,7 +80,7 @@
 		        </execution>
 		    </executions>
 		    <configuration>
-		        <mainClass>main.java.com.macys.pricing.management.tool.pricemanagements</mainClass>
+		        <mainClass>main.java.com.macys.pricing.management.tool.pricemanagements.PricemanagementsApplication</mainClass>
     		</configuration>
             </plugin>
         </plugins>
