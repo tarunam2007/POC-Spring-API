@@ -1,6 +1,6 @@
 FROM java:8-jre
 
-COPY target/pricemanagements-0.0.2-SNAPSHOT.jar /opt
+COPY src/target/pricemanagements-0.0.2-SNAPSHOT.jar /opt
 
 EXPOSE 9999
 
