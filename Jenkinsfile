@@ -6,7 +6,11 @@ node('master') {
   def dockerTool = tool name: 'docker', type: 'org.jenkinsci.plugins.docker.commons.tools.DockerTool'
   withEnv(["DOCKER=${dockerTool}/bin"]) {
   
-  
+   stage("remove"){
+     	dockerCmd 'stop upmt'
+     	dockerCmd 'rm upmt'
+     }
+    
      
     stage('Build') {
              git url: 'https://github.com/VishnuKoti/POC-Spring-API.git'
