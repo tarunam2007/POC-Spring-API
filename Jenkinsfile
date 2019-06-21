@@ -10,23 +10,18 @@ node('master') {
      
     stage('Build') {
              git url: 'https://github.com/VishnuKoti/POC-Spring-API.git'
-              dir('src') {
+        
 	        def mvnHome = tool 'M3'
 		sh "${mvnHome}/bin/mvn clean install"
 		dockerCmd 'build --tag upmt/spring:SNAPSHOT1.0 .'
-            }
+        
     }
  
     stage('Deploy') {
-        stage('Deploy') {
-            dir('src') {
-            	dir('target'){
+          
                 dockerCmd 'run -d -p 8090:8090 --name "upmt" upmt/spring:SNAPSHOT1.0'
-                }
-            }
-        }
-    }
-    
+              
+        }    
   }
 }
 
