@@ -8,7 +8,7 @@ node('master') {
   
    stage("remove"){
    	dockerCmd 'stop upmt'
-   	dockerCmd 'rm uptmt'
+   	dockerCmd 'rm upmt'
    }
      
     stage('Build') {
