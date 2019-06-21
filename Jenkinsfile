@@ -20,7 +20,9 @@ node('master') {
     stage('Deploy') {
         stage('Deploy') {
             dir('src') {
+            	dir('target'){
                 dockerCmd 'run -d -p 8090:8090 --name "upmt" upmt/spring:SNAPSHOT1.0'
+                }
             }
         }
     }
