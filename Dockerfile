@@ -1,8 +1,7 @@
 FROM java:8-jre
 
-COPY target/pricemanagements-0.0.2-SNAPSHOT.jar /opt
-COPY target/pricemanagements-0.0.2-SNAPSHOT.jar.original /opt/pricemanagements-0.0.2-SNAPSHOT.jar
+COPY target/pricemanagements-0.0.2-SNAPSHOT.jar /opt/pricemanagements-0.0.2-SNAPSHOT.jar
 
-EXPOSE 9999
+EXPOSE 8090
 
 CMD ["java", "-jar", "/opt/pricemanagements-0.0.2-SNAPSHOT.jar"]
